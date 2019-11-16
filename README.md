@@ -15,3 +15,14 @@ https://www.npmjs.com/package/validator
 chalk example
 npm install nodemon -g
 and use nodemon insted of node vaidator.js it will automatically restart the application for any change.
+
+Nodemon reload only server part on changes to reload on changes in hbs use following commands [ nodemon app1.js -e js,hbs ]
+
+
+webserver
+static web page
+dynamic page
+use of handler bar
+header
+footter
+use of css

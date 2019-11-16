@@ -13,6 +13,7 @@ notes-app/node_modules/
 playground/node_modules/
 weather-app/node_modules/
 web-server/node_modules/
+node-course-v3-code.iml
 */build/
 */target
 # Gradle and Maven with auto-import
