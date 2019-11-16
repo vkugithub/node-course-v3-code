@@ -1,0 +1,158 @@
+Index: web-server/public/js/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web-server/public/js/app.js	(revision e4b43e45e95302969d88feb8322f6f5edc75a86f)
++++ web-server/public/js/app.js	(date 1573870024000)
+@@ -3,6 +3,8 @@
+ const messageOne = document.querySelector('#message-1')
+ const messageTwo = document.querySelector('#message-2')
+ 
++
++
+ weatherForm.addEventListener('submit', (e) => {
+     e.preventDefault()
+ 
+Index: web-server/package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web-server/package-lock.json	(revision e4b43e45e95302969d88feb8322f6f5edc75a86f)
++++ web-server/package-lock.json	(date 1573867054000)
+@@ -28,6 +28,7 @@
+       "version": "0.1.4",
+       "resolved": "https://registry.npmjs.org/align-text/-/align-text-0.1.4.tgz",
+       "integrity": "sha1-DNkKVhCT810KmSVsIrcGlDP60Rc=",
++      "optional": true,
+       "requires": {
+         "kind-of": "^3.0.2",
+         "longest": "^1.0.1",
+@@ -522,7 +523,8 @@
+     "is-buffer": {
+       "version": "1.1.6",
+       "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz",
+-      "integrity": "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w=="
++      "integrity": "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==",
++      "optional": true
+     },
+     "is-typedarray": {
+       "version": "1.0.0",
+@@ -579,6 +581,7 @@
+       "version": "3.2.2",
+       "resolved": "https://registry.npmjs.org/kind-of/-/kind-of-3.2.2.tgz",
+       "integrity": "sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=",
++      "optional": true,
+       "requires": {
+         "is-buffer": "^1.1.5"
+       }
+@@ -592,7 +595,8 @@
+     "longest": {
+       "version": "1.0.1",
+       "resolved": "https://registry.npmjs.org/longest/-/longest-1.0.1.tgz",
+-      "integrity": "sha1-MKCy2jj3N3DoKUoNIuZiXtd9AJc="
++      "integrity": "sha1-MKCy2jj3N3DoKUoNIuZiXtd9AJc=",
++      "optional": true
+     },
+     "lru-cache": {
+       "version": "2.7.3",
+@@ -809,7 +813,8 @@
+     "repeat-string": {
+       "version": "1.6.1",
+       "resolved": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.6.1.tgz",
+-      "integrity": "sha1-jcrkcOHIirwtYA//Sndihtp15jc="
++      "integrity": "sha1-jcrkcOHIirwtYA//Sndihtp15jc=",
++      "optional": true
+     },
+     "request": {
+       "version": "2.88.0",
+Index: web-server/templates/views/index.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web-server/templates/views/index.hbs	(revision e4b43e45e95302969d88feb8322f6f5edc75a86f)
++++ web-server/templates/views/index.hbs	(date 1573884157000)
+@@ -3,7 +3,7 @@
+ <html>
+ 
+ <head>
+-    <title>Weather</title>
++    <title>{{title}}</title>
+     <link rel="icon" href="/img/weather.png">
+     <link rel="stylesheet" href="/css/styles.css">
+ </head>
+@@ -11,7 +11,7 @@
+ <body>
+     <div class="main-content">
+         {{>header}}
+-
++        {{name}}
+         <p>Use this site to get your weather!</p>
+ 
+         <form>
+Index: web-server/public/index1.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web-server/public/index1.html	(date 1573870038000)
++++ web-server/public/index1.html	(date 1573870038000)
+@@ -0,0 +1,14 @@
++<!DOCTYPE html>
++
++<html>
++
++<head>
++    <link rel="stylesheet" href="/css/styles.css">
++    <script src="/js/index.js"></script>
++</head>
++
++<body>
++<h1>Index.html - From a static file</h1>
++</body>
++
++</html>
+\ No newline at end of file
+Index: web-server/templates/views/404.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web-server/templates/views/404.hbs	(revision e4b43e45e95302969d88feb8322f6f5edc75a86f)
++++ web-server/templates/views/404.hbs	(date 1573883908000)
+@@ -3,7 +3,7 @@
+ <html>
+ 
+ <head>
+-    <title>404</title>
++    <title>{{title}}</title>
+     <link rel="icon" href="/img/weather.png">
+     <link rel="stylesheet" href="/css/styles.css">
+ </head>
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- README.md	(revision e4b43e45e95302969d88feb8322f6f5edc75a86f)
++++ README.md	(date 1573882574000)
+@@ -7,4 +7,15 @@
+ Run js on node like node validator.js
+ Validator module https://www.npmjs.com/package/validator
+ 
+-14 Nov 2019 chalk example npm install nodemon -g and use nodemon insted of node vaidator.js it will automatically restart the application for any change.
+\ No newline at end of file
++14 Nov 2019 chalk example npm install nodemon -g and use nodemon insted of node vaidator.js it will automatically restart the application for any change.
++
++Nodemon reload only server part on changes to reload on changes in hbs use following commands [ nodemon app1.js -e js,hbs ]
++
++
++webserver
++static web page
++dynamic page
++use of handler bar
++header
++footter
++use of css
