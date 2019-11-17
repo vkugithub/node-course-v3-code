@@ -29,7 +29,7 @@ const product = {
 // console.log(stock)
 // console.log(rating)
 
-const transaction = (type, { label, stock = 0 } = {}) => {
+const transaction = (type, { label, stock = 0 } = {}) => { //{ label, stock } = {} initialized with default object to avoid compilation error
     console.log(type, label, stock)
 }
 

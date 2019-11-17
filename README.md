@@ -13,7 +13,9 @@ https://www.npmjs.com/package/validator
 
 14 Nov 2019
 chalk example
-npm install nodemon -g
+npm install nodemon -g -- to install nodemon globally
+npm install nodemon --save-dev  -- to install as dev dependency
+npm run dev -- to run dev script at local from package.json
 and use nodemon insted of node vaidator.js it will automatically restart the application for any change.
 
 Nodemon reload only server part on changes to reload on changes in hbs use following commands [ nodemon app1.js -e js,hbs ]
@@ -26,3 +28,22 @@ use of handler bar
 header
 footter
 use of css
+
+client side java script
+1. Create form take input location and use for to fetch waether information
+2. addListener on form, on submit action call service to get info using location
+3. Print result to <p> using id.
+
+Account on hurekoo
+devdependencies
+script to run on production and local
+ssh configuration for hurekoo
+deploy on hureko
+
+1. download heroku https://devcenter.heroku.com/articles/heroku-cli
+heroku -v
+heroku login
+heroku keys:add
+git push heroku master
+
+
