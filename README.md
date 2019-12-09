@@ -46,4 +46,10 @@ heroku login
 heroku keys:add
 git push heroku master
 
+git remote add heroku https://git.heroku.com/vikrant10-weather-application.git
+
+remote:  !     No default language could be detected for this app.
+remote:                         HINT: This occurs when Heroku cannot detect the buildpack to use for this application automatically.
+remote:                         See https://devcenter.heroku.com/articles/buildpacks
+
 
